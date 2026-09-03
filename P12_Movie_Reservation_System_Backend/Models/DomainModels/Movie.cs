@@ -54,4 +54,6 @@ public class Movie
     // Navigation properties
     public ICollection<Show> Shows { get; set; } = new List<Show>();
     public ICollection<MovieActor> MovieActors { get; set; } = new List<MovieActor>();
+    public ICollection<MovieCrew> MovieCrews { get; set; }
+    = new List<MovieCrew>();
 }

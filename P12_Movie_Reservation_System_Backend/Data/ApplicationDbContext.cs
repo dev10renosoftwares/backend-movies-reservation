@@ -16,6 +16,7 @@ public class ApplicationDbContext : DbContext
     public DbSet<Movie> Movies { get; set; }
     public DbSet<Actor> Actors { get; set; }
     public DbSet<MovieActor> MovieActors { get; set; }
+    public DbSet<MovieCrew> MovieCrews { get; set; }
 
 
     public DbSet<City> Cities { get; set; }
@@ -169,6 +170,11 @@ public class ApplicationDbContext : DbContext
     .HasForeignKey(t => t.CityId)
     .OnDelete(DeleteBehavior.Restrict);
 
+        modelBuilder.Entity<MovieCrew>()
+        .HasKey(x => new { x.MovieId, x.CrewId });
+
+        modelBuilder.Entity<MovieActor>()
+            .HasKey(x => new { x.MovieId, x.ActorId });
         // ============================================================
         // Unique Constraints
         // ============================================================

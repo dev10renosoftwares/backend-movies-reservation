@@ -1,4 +1,6 @@
-﻿namespace P12_Movie_Reservation_System_Backend.DTOs.Movie;
+﻿using P12_Movie_Reservation_System_Backend.DTOs.Actor;
+
+namespace P12_Movie_Reservation_System_Backend.DTOs.Movie;
 
 public class MovieDetailDto
 {
@@ -14,13 +16,15 @@ public class MovieDetailDto
 
     public string Language { get; set; } = string.Empty;
 
+    public List<ActorDetailDto> Actors { get; set; } = new();
+
+    public List<CrewDto> Crew { get; set; } = new();
+
     public DateTime ReleaseDate { get; set; }
 
     public decimal Rating { get; set; }
 
     public string Certificate { get; set; } = string.Empty;
-
-    public string Director { get; set; } = string.Empty;
 
     public string? PosterUrl { get; set; }
 

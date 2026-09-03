@@ -91,7 +91,6 @@ public class MovieService : IMovieService
                 ReleaseDate = movie.ReleaseDate,
                 Rating = movie.Rating,
                 Certificate = movie.Certificate,
-                Director = movie.Director,
                 PosterUrl = movie.PosterUrl,
                 TrailerUrl = movie.TrailerUrl,
                 IsFeatured = movie.IsFeatured
@@ -115,7 +114,6 @@ public class MovieService : IMovieService
             ReleaseDate = request.ReleaseDate,
             Rating = request.Rating,
             Certificate = request.Certificate,
-            Director = request.Director,
             PosterUrl = request.PosterUrl,
             TrailerUrl = request.TrailerUrl,
             IsFeatured = request.IsFeatured,
@@ -142,7 +140,6 @@ public class MovieService : IMovieService
                  ReleaseDate = movie.ReleaseDate,
                  Rating = movie.Rating,
                  Certificate = movie.Certificate,
-                 Director = movie.Director,
                  PosterUrl = movie.PosterUrl,
                  TrailerUrl = movie.TrailerUrl,
                  IsFeatured = movie.IsFeatured
@@ -179,7 +176,6 @@ public class MovieService : IMovieService
         movie.ReleaseDate = request.ReleaseDate;
         movie.Rating = request.Rating;
         movie.Certificate = request.Certificate;
-        movie.Director = request.Director;
         movie.PosterUrl = request.PosterUrl;
         movie.TrailerUrl = request.TrailerUrl;
         movie.IsFeatured = request.IsFeatured;
@@ -203,7 +199,6 @@ public class MovieService : IMovieService
                 ReleaseDate = movie.ReleaseDate,
                 Rating = movie.Rating,
                 Certificate = movie.Certificate,
-                Director = movie.Director,
                 PosterUrl = movie.PosterUrl,
                 TrailerUrl = movie.TrailerUrl,
                 IsFeatured = movie.IsFeatured
