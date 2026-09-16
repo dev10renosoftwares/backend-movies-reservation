@@ -143,7 +143,7 @@ public class BookingService : IBookingService
                 userId);
 
             return ApiResponse<BookingDetailDto>
-                .FailureResponse("Booking could not be completed.");
+         .FailureResponse($"Booking failed: {ex.Message}");
         }
     }
 
