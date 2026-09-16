@@ -34,7 +34,9 @@ public class BookingService : IBookingService
                 request.ShowSeatIds.Count);
 
             var show = await _context.Shows
-                .FirstOrDefaultAsync(s => s.ShowId == request.ShowId);
+    .Include(s => s.Screen)
+        .ThenInclude(sc => sc.Theater)
+    .FirstOrDefaultAsync(s => s.ShowId == request.ShowId);
 
             if (show == null)
                 return ApiResponse<BookingDetailDto>
@@ -80,7 +82,7 @@ public class BookingService : IBookingService
                 UserId = userId,
                 ShowId = request.ShowId,
                 MovieId = show.MovieId!.Value,
-                TheaterId = show.TheaterId!.Value,
+                TheaterId = show.Screen.TheaterId,
                 ScreenId = show.ScreenId!.Value,
                 BookingDate = DateTime.UtcNow,
                 Status = "Confirmed",
